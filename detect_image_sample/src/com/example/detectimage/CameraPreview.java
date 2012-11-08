@@ -106,6 +106,7 @@ public class CameraPreview extends SurfaceView implements
 		}
 	}
 	
+	//
 	public native int detectImage(int width, int height, byte[] data);
 
 	static {
@@ -114,7 +115,6 @@ public class CameraPreview extends SurfaceView implements
 
 	@Override //Camera.AutoFocusCallback
 	public void onAutoFocus(boolean success, Camera camera) {
-		// TODO Auto-generated method stub
 		mCamera.autoFocus(null);
 	}
 }
