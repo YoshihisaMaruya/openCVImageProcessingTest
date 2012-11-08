@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.view.View;
 
+//View
 public class InfomationView extends View {
 	private Paint mPaint;
 

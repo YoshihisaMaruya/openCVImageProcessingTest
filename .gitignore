@@ -1,3 +1,6 @@
 detect_image_sample/.classpath
 detect_image_sample/.project
 detect_image_sample/.settings/org.eclipse.core.resources.prefs
+detect_image_sample/bin/classes.dex
+detect_image_sample/bin/classes/com/example/detectimage/CameraPreview.class
+detect_image_sample/bin/detect_image_sample.apk
