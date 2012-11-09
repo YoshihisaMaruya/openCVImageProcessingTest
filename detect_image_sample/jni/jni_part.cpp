@@ -2,6 +2,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/features2d/features2d.hpp>
+#include <opencv2/legacy/legacy.hpp>
 #include <vector>
 #include <android/log.h>
 
@@ -47,15 +48,15 @@ JNIEXPORT void JNICALL Java_com_example_detectimage_DetectImageActivity_setTrain
 
        detector.detect(gray, trainKeypoints); // 特徴点をtrainKeypointsへ格納
        extractor.compute(gray, trainKeypoints, trainDescriptors); //各特徴点の特徴ベクトルをtrainDescriptorsへ格納
-       trainDescriptorses.push_back(trainDescriptors); 
-    } 
+       trainDescriptorses.push_back(trainDescriptors);
+    }
     matcher.add(trainDescriptorses);//照合器へ全ての学習画像の特徴ベクトルを登録
 }
 
 JNIEXPORT jint JNICALL Java_com_example_detectimage_CameraPreview_detectImage(JNIEnv* env, jobject thiz, jint width, jint height, jbyteArray yuv)
 {
     LOGV("detectImage");
-    
+
     jbyte* _yuv  = env->GetByteArrayElements(yuv, 0);
 
     vector<KeyPoint> queryKeypoints;

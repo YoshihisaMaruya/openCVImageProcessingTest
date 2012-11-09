@@ -9,8 +9,10 @@ import android.hardware.Camera.PreviewCallback;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
 
 public class CameraPreview extends SurfaceView implements
 		SurfaceHolder.Callback, Camera.AutoFocusCallback {
@@ -88,7 +90,6 @@ public class CameraPreview extends SurfaceView implements
 		if (mCamera != null) {
 			// PreviewCallbackの再セット
 			mCamera.setOneShotPreviewCallback(mCallback);
-			mCamera.autoFocus(this);
 			mCamera.startPreview();
 		}
 	}
@@ -106,13 +107,24 @@ public class CameraPreview extends SurfaceView implements
 		}
 	}
 	
-	//
+	
 	public native int detectImage(int width, int height, byte[] data);
 
 	static {
-		System.loadLibrary("native_sample");
+		System.loadLibrary("detect_image_sample");
 	}
 
+    @Override
+    //タッチ時に呼び出されるメソッド
+    public boolean onTouchEvent(MotionEvent event) {
+        //1本の指でタッチされたときに実行
+        if (event.getAction()==MotionEvent.ACTION_DOWN) {
+            //オートフォーカス機能を呼び出す
+        	mCamera.autoFocus(this);
+        }
+        //それ以外のときはtrueを返して処理をすすめる
+        return true;
+    }
 	@Override //Camera.AutoFocusCallback
 	public void onAutoFocus(boolean success, Camera camera) {
 		mCamera.autoFocus(null);

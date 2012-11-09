@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+
 public class DetectImageActivity extends Activity {
 	private static final String TAG = "Sample::Activity";
 	private InfomationView mInfoview;
@@ -63,6 +64,7 @@ public class DetectImageActivity extends Activity {
 		setTrainingImages(widths, heights, rgbas, 2);
 	}
 
+
 	private class MainHandler extends Handler {
 
 		public void handleMessage(Message msg) {
@@ -76,6 +78,6 @@ public class DetectImageActivity extends Activity {
 	public native void setTrainingImages(int[] widths, int[] heights, int[][] rgbas, int imageNum);
 
 	static {
-		System.loadLibrary("native_sample"); //ネイティブライブラリの読み込み
+		System.loadLibrary("detect_image_sample"); //ネイティブライブラリの読み込み
 	}
 }
