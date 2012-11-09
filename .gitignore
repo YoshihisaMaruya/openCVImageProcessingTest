@@ -4,3 +4,14 @@ detect_image_sample/.settings/org.eclipse.core.resources.prefs
 detect_image_sample/bin/classes.dex
 detect_image_sample/bin/classes/com/example/detectimage/CameraPreview.class
 detect_image_sample/bin/detect_image_sample.apk
+detect_image_sample/bin/classes/com/example/detectimage/CameraPreview$1.class
+detect_image_sample/bin/classes/com/example/detectimage/DetectImageActivity$MainHandler.class
+detect_image_sample/bin/classes/com/example/detectimage/DetectImageActivity.class
+detect_image_sample/bin/classes/com/example/detectimage/InfomationView.class
+detect_image_sample/bin/classes/org/opencv/R$attr.class
+detect_image_sample/bin/classes/org/opencv/R$drawable.class
+detect_image_sample/bin/classes/org/opencv/R$raw.class
+detect_image_sample/bin/classes/org/opencv/R$string.class
+detect_image_sample/bin/classes/org/opencv/R.class
+detect_image_sample/bin/jarlist.cache
+detect_image_sample/bin/resources.ap_
